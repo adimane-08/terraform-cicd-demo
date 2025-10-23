@@ -8,6 +8,8 @@ pipeline {
 
     parameters {
         booleanParam(name: 'APPLY', defaultValue: false, description: 'Apply Terraform changes')
+        booleanParam(name: 'DESTROY', defaultValue: false, description: 'Destroy Terraform infrastructure')
+    }
     }
 
     stages {
