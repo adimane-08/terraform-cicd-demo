@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/your-repo/terraform-cicd.git'
+                git branch: 'main', url: 'https://github.com/adimane-08/terraform-cicd-demo.git'
             }
         }
 
