@@ -8,6 +8,7 @@ pipeline {
 
     parameters {
         booleanParam(name: 'APPLY', defaultValue: false, description: 'Apply Terraform changes')
+        booleanParam(name: 'DESTROY', defaultValue: false, description: 'Destroy Terraform infrastructure')
     }
 
     stages {
@@ -37,7 +38,8 @@ pipeline {
 
         stage('Apply') {
             when {
-                expression { return params.APPLY == true }
+                expression { 
+                    return params.APPLY == true }
             }
             steps {
                 bat 'terraform apply -auto-approve tfplan'
