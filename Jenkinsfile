@@ -37,7 +37,8 @@ pipeline {
 
         stage('Apply') {
             when {
-                expression { return params.APPLY == true }
+                expression { 
+                    return params.APPLY == true }
             }
             steps {
                 bat 'terraform apply -auto-approve tfplan'
