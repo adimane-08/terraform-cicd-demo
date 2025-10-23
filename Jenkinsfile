@@ -43,5 +43,17 @@ pipeline {
                 sh 'terraform apply -auto-approve tfplan'
             }
         }
+
+        stage('Destroy') {
+            when {
+                expression {
+                    return params.DESTROY == true
+                }
+            }
+            steps {
+                bat 'terraform destroy -auto-approve'
+            }
+        }
+    
     }
 }
